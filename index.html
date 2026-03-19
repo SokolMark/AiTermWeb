@@ -68,28 +68,26 @@
                             </button>
                             <button class="translate-action-btn" id="mockup-btn">Translate</button>
                             <button class="lang-select-btn">
-                                <img src="https://flagcdn.com/w40/ru.png" width="20" alt="flag" class="inline-flag"/> Russian
+                                <img src="https://flagcdn.com/w40/es.png" width="20" alt="flag" class="inline-flag"/> Spanish
                             </button>
                         </div>
 
                         <div class="separator-line"></div>
 
-                        <div style="display: flex; width: 100%; margin-top: 10px; margin-bottom: 5px;">
-                            <section class="level-section" style="flex: 1;">
-                                <div class="level-indicator" id="mockup-level"></div>
-                                <div class="level-hint">CEFR Level</div>
-                            </section>
-                            <section class="usage-section" style="flex: 1;">
-                                <div class="usage-hint">Frequency</div>
-                                <div class="usage-donut">
-                                    <svg viewBox="0 0 80 80" class="donut-svg">
-                                        <circle cx="40" cy="40" r="30" class="donut-track"></circle>
-                                        <circle cx="40" cy="40" r="30" class="donut-fill" id="mockup-donut"></circle>
-                                    </svg>
-                                    <div class="usage-donut-number" id="mockup-donut-text"></div>
-                                </div>
-                            </section>
-                        </div>
+                        <section class="level-section">
+                            <div class="level-indicator" id="mockup-level"><span class="level-text-anim">?</span></div>
+                            <div class="level-hint">Official CEFR language levels: from A1 (beginner) to C2 (fluent).</div>
+                        </section>
+                        <section class="usage-section">
+                            <div class="usage-hint">Frequency of word usage in daily life: from 1 (rare) to 10 (common).</div>
+                            <div class="usage-donut">
+                                <svg viewBox="0 0 80 80" class="donut-svg">
+                                    <circle cx="40" cy="40" r="30" class="donut-track"></circle>
+                                    <circle cx="40" cy="40" r="30" class="donut-fill" id="mockup-donut"></circle>
+                                </svg>
+                                <div class="usage-donut-number" id="mockup-donut-text">1</div>
+                            </div>
+                        </section>
 
                         <section class="examples-section">
                             <div class="examples-header">
@@ -100,10 +98,11 @@
                                 </div>
                                 <div class="examples-arrows-container">
                                     <div class="examples-arrow-button left-arrow"><svg width="46" height="30" viewBox="0 0 32 24" fill="transparent" stroke="currentColor" stroke-width="1.5"><path class="custom-arrow-path" d="M20 4l8 8-8 8v-5H4v-6h16V4z"/></svg></div>
-                                    <div class="examples-arrow-button right-arrow"><svg width="46" height="30" viewBox="0 0 32 24" fill="transparent" stroke="currentColor" stroke-width="1.5"><path class="custom-arrow-path" d="M20 4l8 8-8 8v-5H4v-6h16V4z"/></svg></div>
+                                    <div class="examples-arrow-button right-arrow" id="mockup-right-arrow"><svg width="46" height="30" viewBox="0 0 32 24" fill="transparent" stroke="currentColor" stroke-width="1.5"><path class="custom-arrow-path" d="M20 4l8 8-8 8v-5H4v-6h16V4z"/></svg></div>
                                 </div>
                                 <div class="content-lang-toggle">
-                                    <img src="https://flagcdn.com/w80/ru.png" width="40" class="toggle-flag active" alt="Target"/>
+                                    <img src="https://flagcdn.com/w80/gb.png" class="toggle-flag" alt="English"/>
+                                    <img src="https://flagcdn.com/w80/es.png" class="toggle-flag active" alt="Spanish"/>
                                 </div>
                             </div>
                             <div class="carousel-container">

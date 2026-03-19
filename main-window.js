@@ -10,6 +10,8 @@ async function runExactMockupAnimation() {
     const donutFill = document.getElementById('mockup-donut');
     const donutText = document.getElementById('mockup-donut-text');
 
+    const rightArrow = document.getElementById('mockup-right-arrow');
+
     const track = document.getElementById('mockup-track');
     const slides = [document.getElementById('slide-0'), document.getElementById('slide-1'), document.getElementById('slide-2')];
     const contents = [document.getElementById('content-0'), document.getElementById('content-1'), document.getElementById('content-2')];
@@ -18,16 +20,30 @@ async function runExactMockupAnimation() {
 
     const donutCircumference = 188.496;
 
+    // --- 0. Исходная позиция курсора ЗА пределами плагина (близко к краю) ---
+    // Отключаем плавность, чтобы мгновенно перенести курсор за край при первой загрузке
+    cursor.style.transition = 'none';
+    cursor.style.top = '300px';
+    cursor.style.left = '450px';
+
+    // Ждем пару кадров, чтобы браузер применил позицию без анимации
+    await delay(50);
+    // Возвращаем плавность CSS
+    cursor.style.transition = '';
+
     while (true) {
         // --- 1. СБРОС (Начальное состояние) ---
         outputText.value = '';
-        levelInd.innerHTML = '';
-        donutText.textContent = '';
+        levelInd.innerHTML = '<span class="level-text-anim">?</span>';
+        donutText.textContent = '1';
         donutFill.style.strokeDashoffset = donutCircumference;
 
         contents.forEach(c => { c.classList.remove('ready'); c.innerHTML = ''; });
         swapBtn.classList.remove('cancel-mode');
         translateBtn.classList.remove('mockup-hover');
+
+        rightArrow.classList.remove('mockup-hover-arrow');
+        rightArrow.style.transform = '';
 
         swapBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10L3 14L7 18"/><path d="M21 14H3"/><path d="M17 4L21 8L17 12"/><path d="M3 8H21"/></svg>';
 
@@ -35,17 +51,17 @@ async function runExactMockupAnimation() {
 
         setTab(0, track, slides, dots, titles);
 
-        cursor.style.top = '100px'; cursor.style.left = '200px';
-        await delay(1500);
+        await delay(1000); // Небольшая пауза перед началом
 
-        // --- 2. Движение курсора и наведение ---
-        cursor.style.top = '165px'; cursor.style.left = '210px';
+        // --- 2. Движение курсора и наведение (летит снаружи) ---
+        cursor.style.top = '165px';
+        cursor.style.left = '210px';
 
-        await delay(150);
+        await delay(600); // Даем время долететь до кнопки
 
         translateBtn.classList.add('mockup-hover');
 
-        await delay(550);
+        await delay(400);
 
         // --- 3. Клик ---
         cursor.style.transform = 'scale(0.8)';
@@ -55,14 +71,16 @@ async function runExactMockupAnimation() {
         cursor.style.transform = 'scale(1)';
         translateBtn.style.transform = '';
 
-        // --- 4. Режим "Загрузки" ---
+        // --- 4. Режим "Загрузки" и уход курсора ---
         translateBtn.classList.remove('mockup-hover');
         translateBtn.disabled = true;
 
         swapBtn.classList.add('cancel-mode');
         swapBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
-        cursor.style.top = '300px'; cursor.style.left = '380px';
+        // Уводим курсор за правую границу плагина (близко к краю) ожидать
+        cursor.style.top = '150px';
+        cursor.style.left = '450px';
         await delay(1200);
 
         // --- 5. Появление данных ---
@@ -71,7 +89,7 @@ async function runExactMockupAnimation() {
         swapBtn.classList.remove('cancel-mode');
         swapBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10L3 14L7 18"/><path d="M21 14H3"/><path d="M17 4L21 8L17 12"/><path d="M3 8H21"/></svg>';
 
-        outputText.value = 'Atmosphere';
+        outputText.value = 'Vibra';
 
         const levels = ['A1', 'A2', 'B1', 'B2'];
         for (let i = 0; i < levels.length; i++) {
@@ -91,34 +109,49 @@ async function runExactMockupAnimation() {
         await delay(300);
 
         // --- 6. Вкладка Примеры (0) ---
-        contents[0].innerHTML = `
-            <div class="content-fade-wrapper">
-                <div class="list-item">The <b>vibe</b> in this room is amazing.</div>
-                <div class="list-item">I didn't like the <b>vibe</b> of that place.</div>
-            </div>`;
+        contents[0].innerHTML = `<div class="content-fade-wrapper"><div class="list-item">La vibra en esta habitación es increíble.</div><div class="list-item">No me gustó la vibra de ese lugar.</div><div class="list-item">Ella siempre transmite una vibra muy positiva y relajada.</div><div class="list-item">El concierto de anoche tuvo una vibra mágica.</div></div>`;
         contents[0].classList.add('ready');
-        await delay(2500);
 
-        // --- 7. Вкладка Синонимы (1) ---
+        await delay(800);
+
+        // Курсор летит из-за пределов плагина к правой стрелке
+        cursor.style.top = '388px';
+        cursor.style.left = '245px';
+        await delay(600); // Даем время долететь
+
+        // Наведение курсора (стрелка красится и полностью заливается)
+        rightArrow.classList.add('mockup-hover-arrow');
+        await delay(700);
+
+        // --- 7. Клик по стрелке и вкладка Синонимы (1) ---
+        cursor.style.transform = 'scale(0.8)';
+        rightArrow.style.transform = 'scale(0.85)';
+        await delay(150);
+        cursor.style.transform = 'scale(1)';
+        rightArrow.style.transform = 'scale(1)';
+
         setTab(1, track, slides, dots, titles);
-        contents[1].innerHTML = `
-            <div class="content-fade-wrapper">
-                <div class="list-item">atmosphere</div>
-                <div class="list-item">feeling</div>
-                <div class="list-item">mood</div>
-            </div>`;
+        contents[1].innerHTML = `<div class="content-fade-wrapper"><div class="list-item">ambiente</div><div class="list-item">energía</div><div class="list-item">aura</div><div class="list-item">sensación</div></div>`;
         contents[1].classList.add('ready');
-        await delay(2500);
+        await delay(2000); // Ожидание 2 секунды
 
-        // --- 8. Вкладка Объяснение (2) ---
+        // --- 8. Клик по стрелке и вкладка Объяснение (2) ---
+        cursor.style.transform = 'scale(0.8)';
+        rightArrow.style.transform = 'scale(0.85)';
+        await delay(150);
+        cursor.style.transform = 'scale(1)';
+        rightArrow.style.transform = 'scale(1)';
+
         setTab(2, track, slides, dots, titles);
-        contents[2].innerHTML = `
-            <div class="content-fade-wrapper">
-                The emotional state or the atmosphere that a particular place, person, or thing creates.
-            </div>`;
+        contents[2].innerHTML = `<div class="content-fade-wrapper">El estado emocional, la atmósfera o la energía que transmite y crea un lugar, una persona o una cosa en particular. Esta palabra se utiliza frecuentemente para describir la intuición o el sentimiento inicial que se tiene al conocer a alguien. También puede referirse a la tendencia general de una situación o entorno.</div>`;
         contents[2].classList.add('ready');
 
-        await delay(4000);
+        await delay(3000);
+
+        // --- 9. Завершение цикла: уводим курсор за пределы (близко к краю) ---
+        cursor.style.top = '300px';
+        cursor.style.left = '450px';
+        await delay(800); // Ждем пока он улетит перед началом нового цикла
     }
 }
 
