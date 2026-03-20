@@ -5,39 +5,61 @@ body {
     color: #1a1d27;
 }
 a { text-decoration: none; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.site-header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+.container { max-width: 1250px; margin: 0 auto; padding: 0 40px; }
+
+/* Header - скрыт по умолчанию и фиксируется сверху */
+.site-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.site-header.header-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .header-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+
+/* Навигационное меню */
+.main-nav { display: flex; gap: 30px; }
+.main-nav a { color: #1a1d27; font-weight: 600; font-size: 15px; transition: color 0.3s; }
+.main-nav a:hover { color: #4a90e2; }
 
 .btn-outline { border: 2px solid #4a90e2; color: #4a90e2; padding: 8px 20px; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
 .btn-outline:hover { background: #4a90e2; color: white; }
 .btn-primary { background: linear-gradient(135deg, #4a90e2, #6366f1); color: white; padding: 14px 28px; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3); display: inline-block; }
 
 .showcase-section { padding: 80px 0; background: linear-gradient(to bottom, #f0f2f5 0%, #d7e2f1 100%); overflow: hidden; }
-.showcase-container { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+.showcase-container { display: flex; align-items: center; justify-content: space-between; gap: 120px; }
 
-/* НОВОЕ: Класс для того, чтобы поменять местами текст и окно */
 .showcase-container.reverse-layout { flex-direction: row-reverse; }
 
 .showcase-content { flex: 1; max-width: 500px; }
 .title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
-.subtitle { font-size: 18px; color: #6b7189; margin-bottom: 30px; }
+.subtitle { font-size: 18px; color: #6b7189; margin-bottom: 30px; line-height: 1.5; }
 .showcase-visual { flex: 1; display: flex; justify-content: center; }
 
-/* 3D Обертка для презентации на сайте */
 .mockup-3d-wrapper {
     perspective: 1200px;
 }
 .popup-container {
     transform: rotateY(-8deg) rotateX(4deg);
     box-shadow: 20px 20px 50px rgba(74, 144, 226, 0.25), 0 5px 15px rgba(0,0,0,0.08) !important;
-    border-radius: 0 !important; /* Делает углы острыми во всех мокапах */
+    border-radius: 0 !important;
     transition: transform 0.5s ease;
 }
 .popup-container:hover { transform: rotateY(0deg) rotateX(0deg) translateY(-5px); }
 
-/* НОВОЕ: Наклон в правую сторону для второго окна */
 .popup-container.tilt-right {
     transform: rotateY(8deg) rotateX(4deg);
 }
@@ -46,3 +68,100 @@ a { text-decoration: none; }
 }
 
 .mockup-cursor { position: absolute; width: 28px; height: 28px; z-index: 1000; top: 120px; left: 180px; transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+
+/* ============================================
+   Стили блока "Why AiTerm"
+   ============================================ */
+.why-section {
+    /* ИЗМЕНЕНО: увеличил padding-top со 100px до 150px для отступа от блока выше */
+    padding: 150px 0 100px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.why-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1a1d27;
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-card {
+    background: #f8fafc;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.1);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1d27;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #6b7189;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   Футер (Footer) с контактами
+   ============================================ */
+.site-footer {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 60px 0 30px 0;
+    margin-top: 50px; /* Отступ от контента выше */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 25px;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.footer-links a {
+    color: #e5e7eb;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    color: #4a90e2;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}

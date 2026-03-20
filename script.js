@@ -14,3 +14,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Логика появления верхней панели при прокрутке вниз
+const header = document.getElementById('main-header');
+const heroSection = document.querySelector('.hero-section');
+
+window.addEventListener('scroll', () => {
+    // Получаем высоту первого экрана (Hero)
+    const heroHeight = heroSection.offsetHeight;
+
+    // Если пользователь проскроллил почти весь первый экран (оставили запас 100px)
+    if (window.scrollY > heroHeight - 100) {
+        header.classList.add('header-visible');
+    } else {
+        header.classList.remove('header-visible');
+    }
+});

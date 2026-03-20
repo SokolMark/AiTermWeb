@@ -1,30 +1,55 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AiTerm — Умный переводчик</title>
+    <title>AiTerm — Smart Translator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero.css">
     <link rel="stylesheet" href="main-window.css">
     <link rel="stylesheet" href="dictionaries-mockup.css">
     <link rel="stylesheet" href="mini-mockup.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
+
+<header class="site-header" id="main-header">
     <div class="container header-container">
         <div class="logo">
-            <span class="logo-ai" style="color:#4a90e2">Ai</span><span class="logo-term" style="color:#8b90a0">Term</span>
+            <span translate="no" class="notranslate">
+                <span class="logo-ai" style="color:#4a90e2">Ai</span><span class="logo-term" style="color:#8b90a0">Term</span>
+            </span>
         </div>
-        <a href="#install" class="btn-outline">Установить</a>
+
+        <nav class="main-nav">
+            <a href="#install">Home</a>
+            <a href="#dictionaries">Dictionaries</a>
+            <a href="#quick-translate">Quick Translate</a>
+            <a href="#why-aiterm">Why AiTerm</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#install" class="btn-outline">Add to Chrome</a>
     </div>
 </header>
 
-<section class="showcase-section">
+<section class="hero-section" id="install">
+    <div class="container">
+        <h1 class="hero-title">Welcome to
+            <span translate="no" class="notranslate">
+                <span style="color:#4a90e2">Ai</span><span style="color:#8b90a0">Term</span>
+            </span>
+        </h1>
+        <p class="hero-subtitle">AiTerm is your ultimate language learning companion and smart translator. Understand context, learn new words, and master languages effortlessly right from your browser.</p>
+        <a href="#" class="btn-primary hero-btn">Add to Chrome</a>
+    </div>
+</section>
+
+<section class="showcase-section" id="main-features">
     <div class="container showcase-container">
         <div class="showcase-visual">
             <div class="mockup-3d-wrapper">
-                <div class="popup-container light-theme" id="main-mockup">
+                <div class="popup-container light-theme notranslate" translate="no" id="main-mockup">
                     <div class="content-wrapper">
 
                         <header class="header">
@@ -133,20 +158,20 @@
             </div>
         </div>
         <div class="showcase-content right-content">
-            <h1 class="title">Словарь будущего</h1>
-            <p class="subtitle">AiTerm воссоздает полное понимание слова. Получайте CEFR уровень, частоту использования, синонимы и живые примеры — все в одном окне.</p>
+            <h1 class="title">The Dictionary of the Future</h1>
+            <p class="subtitle">AiTerm recreates the complete understanding of a word. Get the CEFR level, usage frequency, synonyms, and live examples — all in one single window.</p>
             <div class="cta-group">
-                <a href="#install" class="btn-primary">Добавить в Chrome</a>
+                <a href="#install" class="btn-primary">Add to Chrome</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="showcase-section" style="background: linear-gradient(to bottom, #d7e2f1 0%, #f0f2f5 100%);">
+<section class="showcase-section" id="dictionaries" style="background: linear-gradient(to bottom, #d7e2f1 0%, #f0f2f5 100%);">
     <div class="container showcase-container reverse-layout">
         <div class="showcase-visual">
             <div class="mockup-3d-wrapper">
-                <div class="popup-container light-theme tilt-right" id="dicts-mockup">
+                <div class="popup-container light-theme tilt-right notranslate" translate="no" id="dicts-mockup">
                     <div class="content-wrapper" style="padding: 0;">
 
                         <div class="mockup-view active" id="view-dicts">
@@ -271,17 +296,17 @@
         </div>
 
         <div class="showcase-content left-content" style="max-width: 500px;">
-            <h1 class="title">Ваши личные словари</h1>
-            <p class="subtitle">Организуйте свои слова в тематические подборки. Быстрый доступ к сохраненным терминам, их уровням и примерам использования — все это в пару кликов, чтобы вы ничего не забыли.</p>
+            <h1 class="title">Your Personal Dictionaries</h1>
+            <p class="subtitle">Organize your words into thematic collections. Quick access to saved terms, their levels, and usage examples — all in a couple of clicks, so you never forget anything.</p>
         </div>
     </div>
 </section>
 
-<section class="showcase-section" style="background: linear-gradient(to bottom, #f0f2f5 0%, #e2e8f0 100%);">
+<section class="showcase-section" id="quick-translate" style="background: linear-gradient(to bottom, #f0f2f5 0%, #e2e8f0 100%);">
     <div class="container showcase-container">
         <div class="showcase-visual">
             <div class="mockup-3d-wrapper">
-                <div class="mini-mockup-scene" id="mini-scene">
+                <div class="mini-mockup-scene notranslate" translate="no" id="mini-scene">
 
                     <div class="browser-text-container">
                         <h3 class="browser-title">The Power of Intuition</h3>
@@ -317,11 +342,51 @@
             </div>
         </div>
         <div class="showcase-content right-content">
-            <h1 class="title">Быстрый перевод в любом месте</h1>
-            <p class="subtitle">Выделяйте любой текст в браузере и мгновенно получайте точный перевод без необходимости переключаться между вкладками или открывать главное окно.</p>
+            <h1 class="title">Quick Translation Anywhere</h1>
+            <p class="subtitle">Highlight any text in the browser and instantly get an accurate translation without the need to switch tabs or open the main window.</p>
         </div>
     </div>
 </section>
+
+<section class="why-section" id="why-aiterm">
+    <div class="container">
+        <h2 class="why-title">Why choose <span translate="no" class="notranslate"><span style="color:#4a90e2">Ai</span><span style="color:#8b90a0">Term</span></span>?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Deep Context</h3>
+                <p>Go beyond basic translation. Understand word usage frequency, synonyms, and real-life examples instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Smart Dictionaries</h3>
+                <p>Save words directly to themed collections and review them anytime to build your vocabulary.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Access</h3>
+                <p>Translate any text seamlessly on any web page without switching tabs or losing your focus.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" id="contact">
+    <div class="container footer-container">
+        <div class="footer-brand">
+            <span translate="no" class="notranslate">
+                <span class="logo-ai" style="color:#4a90e2; font-size:24px; font-weight:800;">Ai</span><span class="logo-term" style="color:#8b90a0; font-size:24px; font-weight:800;">Term</span>
+            </span>
+            <p>Your ultimate language learning companion.</p>
+        </div>
+        <div class="footer-links">
+            <a href="mailto:support@aiterm.com">Contact Us: support@aiterm.com</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 <span translate="no" class="notranslate">AiTerm</span>. All rights reserved.
+    </div>
+</footer>
 
 <script src="script.js"></script>
 <script src="main-window.js"></script>

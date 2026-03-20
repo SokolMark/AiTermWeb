@@ -1,0 +1,39 @@
+/* ============================================
+   AiTerm — Hero Section Styles
+   ============================================ */
+
+.hero-section {
+    padding: 100px 20px 80px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f2f5 100%);
+    position: relative;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: #1a1d27;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #6b7189;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    font-size: 18px;
+    padding: 16px 36px;
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
