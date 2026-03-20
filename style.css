@@ -1,3 +1,4 @@
+/* style.css */
 body {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Inter', system-ui, sans-serif;
@@ -39,7 +40,7 @@ a { text-decoration: none; }
 .btn-outline:hover { background: #4a90e2; color: white; }
 .btn-primary { background: linear-gradient(135deg, #4a90e2, #6366f1); color: white; padding: 14px 28px; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3); display: inline-block; }
 
-.showcase-section { padding: 80px 0; background: linear-gradient(to bottom, #f0f2f5 0%, #d7e2f1 100%); overflow: hidden; }
+.showcase-section { padding: 80px 0; background: linear-gradient(to bottom, #f0f2f5 0%, #d7e2f1 100%); }
 .showcase-container { display: flex; align-items: center; justify-content: space-between; gap: 120px; }
 
 .showcase-container.reverse-layout { flex-direction: row-reverse; }
@@ -73,8 +74,7 @@ a { text-decoration: none; }
    Стили блока "Why AiTerm"
    ============================================ */
 .why-section {
-    /* ИЗМЕНЕНО: увеличил padding-top со 100px до 150px для отступа от блока выше */
-    padding: 150px 0 100px 0;
+    padding: 150px 0 180px 0;
     background-color: #ffffff;
     text-align: center;
 }
@@ -131,14 +131,13 @@ a { text-decoration: none; }
     background-color: #111827;
     color: #ffffff;
     padding: 60px 0 30px 0;
-    margin-top: 50px; /* Отступ от контента выше */
+    margin-top: 0;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 40px;
     margin-bottom: 25px;
 }
@@ -164,4 +163,25 @@ a { text-decoration: none; }
     text-align: center;
     color: #6b7280;
     font-size: 14px;
+}
+
+/* ============================================
+   Кастомный скроллбар (Custom Scrollbar)
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.7);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(80, 80, 80, 0.9);
 }

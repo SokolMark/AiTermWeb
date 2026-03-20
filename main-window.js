@@ -1,3 +1,4 @@
+// main-window.js
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function runExactMockupAnimation() {
@@ -51,11 +52,11 @@ async function runExactMockupAnimation() {
         cursor.style.top = '165px';
         cursor.style.left = '210px';
 
-        await delay(600);
+        await delay(350);
 
         translateBtn.classList.add('mockup-hover');
 
-        await delay(400);
+        await delay(250);
 
         cursor.style.transform = 'scale(0.8)';
 
@@ -106,7 +107,6 @@ async function runExactMockupAnimation() {
         cursor.style.top = '388px';
         cursor.style.left = '245px';
 
-        // Срабатывает идеально в тайминг касания стрелки курсором
         await delay(400);
 
         rightArrow.classList.add('mockup-hover-arrow');
@@ -135,7 +135,6 @@ async function runExactMockupAnimation() {
 
         await delay(3000);
 
-        // Мгновенно убираем заливку перед началом движения курсора в сторону
         rightArrow.classList.remove('mockup-hover-arrow');
         cursor.style.top = '300px';
         cursor.style.left = '450px';
