@@ -20,19 +20,14 @@ async function runExactMockupAnimation() {
 
     const donutCircumference = 188.496;
 
-    // --- 0. Исходная позиция курсора ЗА пределами плагина (близко к краю) ---
-    // Отключаем плавность, чтобы мгновенно перенести курсор за край при первой загрузке
     cursor.style.transition = 'none';
     cursor.style.top = '300px';
     cursor.style.left = '450px';
 
-    // Ждем пару кадров, чтобы браузер применил позицию без анимации
     await delay(50);
-    // Возвращаем плавность CSS
     cursor.style.transition = '';
 
     while (true) {
-        // --- 1. СБРОС (Начальное состояние) ---
         outputText.value = '';
         levelInd.innerHTML = '<span class="level-text-anim">?</span>';
         donutText.textContent = '1';
@@ -51,19 +46,17 @@ async function runExactMockupAnimation() {
 
         setTab(0, track, slides, dots, titles);
 
-        await delay(1000); // Небольшая пауза перед началом
+        await delay(1000);
 
-        // --- 2. Движение курсора и наведение (летит снаружи) ---
         cursor.style.top = '165px';
         cursor.style.left = '210px';
 
-        await delay(600); // Даем время долететь до кнопки
+        await delay(600);
 
         translateBtn.classList.add('mockup-hover');
 
         await delay(400);
 
-        // --- 3. Клик ---
         cursor.style.transform = 'scale(0.8)';
 
         translateBtn.style.transform = 'scale(0.96)';
@@ -71,19 +64,16 @@ async function runExactMockupAnimation() {
         cursor.style.transform = 'scale(1)';
         translateBtn.style.transform = '';
 
-        // --- 4. Режим "Загрузки" и уход курсора ---
         translateBtn.classList.remove('mockup-hover');
         translateBtn.disabled = true;
 
         swapBtn.classList.add('cancel-mode');
         swapBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
-        // Уводим курсор за правую границу плагина (близко к краю) ожидать
         cursor.style.top = '150px';
         cursor.style.left = '450px';
         await delay(1200);
 
-        // --- 5. Появление данных ---
         translateBtn.disabled = false;
 
         swapBtn.classList.remove('cancel-mode');
@@ -108,22 +98,20 @@ async function runExactMockupAnimation() {
 
         await delay(300);
 
-        // --- 6. Вкладка Примеры (0) ---
         contents[0].innerHTML = `<div class="content-fade-wrapper"><div class="list-item">La vibra en esta habitación es increíble.</div><div class="list-item">No me gustó la vibra de ese lugar.</div><div class="list-item">Ella siempre transmite una vibra muy positiva y relajada.</div><div class="list-item">El concierto de anoche tuvo una vibra mágica.</div></div>`;
         contents[0].classList.add('ready');
 
         await delay(800);
 
-        // Курсор летит из-за пределов плагина к правой стрелке
         cursor.style.top = '388px';
         cursor.style.left = '245px';
-        await delay(600); // Даем время долететь
 
-        // Наведение курсора (стрелка красится и полностью заливается)
+        // Срабатывает идеально в тайминг касания стрелки курсором
+        await delay(400);
+
         rightArrow.classList.add('mockup-hover-arrow');
-        await delay(700);
+        await delay(900);
 
-        // --- 7. Клик по стрелке и вкладка Синонимы (1) ---
         cursor.style.transform = 'scale(0.8)';
         rightArrow.style.transform = 'scale(0.85)';
         await delay(150);
@@ -133,9 +121,8 @@ async function runExactMockupAnimation() {
         setTab(1, track, slides, dots, titles);
         contents[1].innerHTML = `<div class="content-fade-wrapper"><div class="list-item">ambiente</div><div class="list-item">energía</div><div class="list-item">aura</div><div class="list-item">sensación</div></div>`;
         contents[1].classList.add('ready');
-        await delay(2000); // Ожидание 2 секунды
+        await delay(2000);
 
-        // --- 8. Клик по стрелке и вкладка Объяснение (2) ---
         cursor.style.transform = 'scale(0.8)';
         rightArrow.style.transform = 'scale(0.85)';
         await delay(150);
@@ -148,10 +135,11 @@ async function runExactMockupAnimation() {
 
         await delay(3000);
 
-        // --- 9. Завершение цикла: уводим курсор за пределы (близко к краю) ---
+        // Мгновенно убираем заливку перед началом движения курсора в сторону
+        rightArrow.classList.remove('mockup-hover-arrow');
         cursor.style.top = '300px';
         cursor.style.left = '450px';
-        await delay(800); // Ждем пока он улетит перед началом нового цикла
+        await delay(800);
     }
 }
 
