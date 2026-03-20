@@ -6,6 +6,7 @@
     <title>AiTerm — Умный переводчик</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main-window.css">
+    <link rel="stylesheet" href="dictionaries-mockup.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -140,7 +141,136 @@
     </div>
 </section>
 
+<section class="showcase-section" style="background: linear-gradient(to bottom, #d7e2f1 0%, #f0f2f5 100%);">
+    <div class="container showcase-container reverse-layout">
+        <div class="showcase-visual">
+            <div class="mockup-3d-wrapper">
+                <div class="popup-container light-theme tilt-right" id="dicts-mockup">
+                    <div class="content-wrapper" style="padding: 0;">
+
+                        <div class="mockup-view active" id="view-dicts">
+                            <div class="menu-header">
+                                <div class="back-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                </div>
+                                <div class="header-title"><span class="title-ai">Ai</span><span class="title-term">Term</span></div>
+                                <div class="close-button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+                            </div>
+                            <input type="text" class="search-input" placeholder="Search dictionary...">
+                            <div class="dictionaries-body">
+                                <div class="dict-list-container">
+                                    <div class="dict-list">
+                                        <button class="dict-item-btn" id="mockup-dict-btn">
+                                            <div class="dict-item-left">
+                                                <div style="flex-shrink: 0; display: flex;">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--header-bg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                                </div>
+                                                <span>Spanish Travel</span>
+                                            </div>
+                                            <span class="dict-word-count">3</span>
+                                        </button>
+                                        <button class="dict-item-btn">
+                                            <div class="dict-item-left">
+                                                <div style="flex-shrink: 0; display: flex;">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--header-bg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                                </div>
+                                                <span>Tech Terms</span>
+                                            </div>
+                                            <span class="dict-word-count">142</span>
+                                        </button>
+                                    </div>
+                                    <button class="confirm-btn primary" style="width: 100%; margin-top: 24px;">Create Dictionary</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mockup-view hidden-right" id="view-words">
+                            <div class="menu-header">
+                                <div class="back-button" id="mockup-back-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                </div>
+                                <div class="header-title" style="font-size: 16px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                    <span>Spanish Travel</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </div>
+                                <div style="display: flex; gap: 2px;">
+                                    <div class="close-button danger-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></div>
+                                    <div class="close-button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+                                </div>
+                            </div>
+                            <input type="text" class="search-input" placeholder="Search word...">
+                            <div class="dictionaries-body">
+                                <div class="words-list-container">
+                                    <div class="word-item-btn" id="mockup-word-btn">
+                                        <span class="word-item-orig">Vibra</span>
+                                        <span class="word-item-trans">Vibe</span>
+                                    </div>
+                                    <div class="word-item-btn">
+                                        <span class="word-item-orig">Hola</span>
+                                        <span class="word-item-trans">Hello</span>
+                                    </div>
+                                    <div class="word-item-btn">
+                                        <span class="word-item-orig">Viaje</span>
+                                        <span class="word-item-trans">Trip</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mockup-overlay" id="view-detail-overlay">
+                            <div class="confirm-box word-detail-box">
+                                <div class="close-button danger-btn absolute-danger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></div>
+                                <div class="close-button absolute-close" id="mockup-close-detail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
+
+                                <div class="detail-row" style="border-bottom: none; padding-bottom: 0; text-align: center;">
+                                    <span class="detail-value" style="font-weight: bold; font-size: 24px; color: var(--header-bg); display: block;">Vibra</span>
+                                    <span class="detail-value" style="font-weight: bold; font-size: 16px; margin-top: 4px; display: block;">Vibe</span>
+                                </div>
+
+                                <div class="detail-row" style="flex-direction: row; justify-content: center; align-items: center; gap: 15px; padding-top: 15px;">
+                                    <div style="text-align: center;">
+                                        <span class="detail-label">Level</span>
+                                        <span class="detail-value" style="font-weight: bold; display: block;">B1</span>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <span class="detail-label">Frequency</span>
+                                        <span class="detail-value" style="font-weight: bold; display: block;">8/10</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <span class="detail-label">Explanation</span>
+                                    <span class="detail-value">El estado emocional, la atmósfera o la energía...</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Synonyms</span>
+                                    <span class="detail-value">ambiente, energía, aura, sensación</span>
+                                </div>
+                                <div class="detail-row no-border">
+                                    <span class="detail-label">Examples</span>
+                                    <div class="detail-value" style="display: flex; flex-direction: column; gap: 6px;">
+                                        <div>• La vibra en esta habitación es increíble.</div>
+                                        <div>• No me gustó la vibra de ese lugar.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='3 3 10 21 14 14 21 10 3 3' fill='white'></polygon></svg>" class="mockup-cursor" id="dicts-cursor" alt="cursor">
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-content left-content" style="max-width: 500px;">
+            <h1 class="title">Ваши личные словари</h1>
+            <p class="subtitle">Организуйте свои слова в тематические подборки. Быстрый доступ к сохраненным терминам, их уровням и примерам использования — все это в пару кликов, чтобы вы ничего не забыли.</p>
+        </div>
+    </div>
+</section>
+
 <script src="script.js"></script>
 <script src="main-window.js"></script>
+<script src="dictionaries-mockup.js"></script>
 </body>
 </html>

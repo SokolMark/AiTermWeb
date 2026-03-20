@@ -16,6 +16,10 @@ a { text-decoration: none; }
 
 .showcase-section { padding: 80px 0; background: linear-gradient(to bottom, #f0f2f5 0%, #d7e2f1 100%); overflow: hidden; }
 .showcase-container { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+
+/* НОВОЕ: Класс для того, чтобы поменять местами текст и окно */
+.showcase-container.reverse-layout { flex-direction: row-reverse; }
+
 .showcase-content { flex: 1; max-width: 500px; }
 .title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
 .subtitle { font-size: 18px; color: #6b7189; margin-bottom: 30px; }
@@ -28,8 +32,17 @@ a { text-decoration: none; }
 .popup-container {
     transform: rotateY(-8deg) rotateX(4deg);
     box-shadow: 20px 20px 50px rgba(74, 144, 226, 0.25), 0 5px 15px rgba(0,0,0,0.08) !important;
-    border-radius: 0 !important;
+    border-radius: 0 !important; /* Делает углы острыми во всех мокапах */
     transition: transform 0.5s ease;
 }
 .popup-container:hover { transform: rotateY(0deg) rotateX(0deg) translateY(-5px); }
-.mockup-cursor { position: absolute; width: 28px; height: 28px; z-index: 100; top: 120px; left: 180px; transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+
+/* НОВОЕ: Наклон в правую сторону для второго окна */
+.popup-container.tilt-right {
+    transform: rotateY(8deg) rotateX(4deg);
+}
+.popup-container.tilt-right:hover {
+    transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
+}
+
+.mockup-cursor { position: absolute; width: 28px; height: 28px; z-index: 1000; top: 120px; left: 180px; transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
