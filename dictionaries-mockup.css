@@ -143,12 +143,15 @@
     transform: translateY(-1px);
 }
 
+/* ОБНОВЛЕНО: Светлый фон и блюр */
 .mockup-overlay {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 100;
     display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 .mockup-overlay.visible { opacity: 1; pointer-events: auto; }
 
@@ -158,17 +161,35 @@
     padding: 30px 20px 20px 20px;
     width: 90%;
     box-sizing: border-box !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     transform: translateY(20px);
     transition: transform 0.3s ease;
     position: relative;
 }
 .mockup-overlay.visible .confirm-box { transform: translateY(0); }
 
+/* --- СКРОЛЛ --- */
+.scrollable-box {
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.scrollable-box::-webkit-scrollbar {
+    width: 4px;
+}
+.scrollable-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollable-box::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+}
+
+/* --- СИНИЕ ПОЛОСКИ В ДЕТАЛЯХ --- */
 .detail-row {
     width: 100%; display: flex; flex-direction: column;
     margin-bottom: 12px; padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--header-bg);
     text-align: left;
 }
 .detail-row.no-border { border-bottom: none; }
@@ -178,23 +199,56 @@
 .absolute-close { position: absolute; top: 10px; right: 10px; }
 .absolute-danger { position: absolute; top: 10px; left: 10px; }
 
+/* --- ИКОНКИ --- */
 .close-button, .back-button {
     cursor: pointer;
     opacity: 0.6;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
     border-radius: 8px;
+    border: 1px solid transparent;
 }
 
 .close-button.mockup-hover, .back-button.mockup-hover {
     opacity: 1;
-    background-color: rgba(128, 128, 128, 0.1);
+    background-color: rgba(74, 144, 226, 0.1);
+    box-shadow: 0 0 0 2px var(--header-bg);
+    color: var(--header-bg);
 }
 
-.danger-btn { color: #ff4757; }
-.danger-btn svg { color: #ff4757; }
-.danger-btn.mockup-hover { background-color: rgba(255, 71, 87, 0.1); }
+/* Красный мусорник */
+.danger-btn { color: #ff0000 !important; }
+.danger-btn svg { color: #ff0000 !important; }
+.danger-btn.mockup-hover {
+    background-color: rgba(255, 0, 0, 0.1) !important;
+    box-shadow: 0 0 0 2px #ff0000 !important;
+    color: #ff0000 !important;
+}
+
+/* --- СТИЛИ ДЛЯ ФЛАЖКОВ --- */
+.modal-lang-toggle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.toggle-flag {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0.5;
+    filter: grayscale(100%);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.toggle-flag.active {
+    opacity: 1;
+    filter: none;
+    border-color: var(--header-bg);
+}

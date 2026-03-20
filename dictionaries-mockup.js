@@ -27,6 +27,9 @@ async function runDictsMockupAnimation() {
         closeBtn.classList.remove('mockup-hover');
         backBtn.classList.remove('mockup-hover');
 
+        const detailBox = document.querySelector('.scrollable-box');
+        if (detailBox) detailBox.scrollTop = 0;
+
         await wait(1000);
 
         cursor.style.top = '140px';
@@ -65,10 +68,20 @@ async function runDictsMockupAnimation() {
 
         cursor.style.top = '450px';
         cursor.style.left = '350px';
-        await wait(2500);
 
-        cursor.style.top = '130px';
-        cursor.style.left = '360px';
+        await wait(1000);
+        if (detailBox) {
+            detailBox.scrollTo({ top: 250, behavior: 'smooth' });
+            await wait(1500);
+            detailBox.scrollTo({ top: 0, behavior: 'smooth' });
+            await wait(600);
+        } else {
+            await wait(3100);
+        }
+
+        // ОБНОВЛЕНО: Координаты крестика (чуть выше и правее, чтобы попасть идеально)
+        cursor.style.top = '70px';
+        cursor.style.left = '375px';
 
         await wait(450);
         closeBtn.classList.add('mockup-hover');
