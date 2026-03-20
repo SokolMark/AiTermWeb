@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main-window.css">
     <link rel="stylesheet" href="dictionaries-mockup.css">
+    <link rel="stylesheet" href="mini-mockup.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -276,8 +277,55 @@
     </div>
 </section>
 
+<section class="showcase-section" style="background: linear-gradient(to bottom, #f0f2f5 0%, #e2e8f0 100%);">
+    <div class="container showcase-container">
+        <div class="showcase-visual">
+            <div class="mockup-3d-wrapper">
+                <div class="mini-mockup-scene" id="mini-scene">
+
+                    <div class="browser-text-container">
+                        <h3 class="browser-title">The Power of Intuition</h3>
+                        <p class="browser-text">
+                            Understanding the underlying <span id="mini-highlight">vibe</span> of a conversation is crucial for effective communication and emotional intelligence.
+                        </p>
+                        <p class="browser-text" style="color: #94a3b8;">
+                            It allows you to read between the lines and respond appropriately...
+                        </p>
+                    </div>
+
+                    <div class="aiterm-floating-window" id="mini-popup">
+                        <div class="aiterm-header"><span class="aiterm-title-ai">Ai</span><span class="aiterm-title-term">Term</span></div>
+                        <div class="aiterm-texts-row">
+                            <div class="aiterm-text-box" id="mini-source-text">vibe</div>
+                            <div class="aiterm-middle-col">
+                                <div class="aiterm-arrow" id="mini-arrow">&rarr;</div>
+                            </div>
+                            <div class="aiterm-text-box" id="mini-target-text">...</div>
+                        </div>
+                        <div class="aiterm-controls-row">
+                            <div class="aiterm-lang-tag">Auto</div>
+                            <button class="aiterm-translate-btn" id="mini-translate-btn">Translate</button>
+                            <div class="aiterm-lang-tag">SPA</div>
+                        </div>
+
+                        <div class="aiterm-save-hint">To save this word, translate it in the main extension menu.</div>
+                        <div class="aiterm-disable-hint">To configure popups, go to Settings in the main menu.</div>
+                    </div>
+
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='3 3 10 21 14 14 21 10 3 3' fill='white'></polygon></svg>" class="mockup-cursor" id="mini-cursor" alt="cursor">
+                </div>
+            </div>
+        </div>
+        <div class="showcase-content right-content">
+            <h1 class="title">Быстрый перевод в любом месте</h1>
+            <p class="subtitle">Выделяйте любой текст в браузере и мгновенно получайте точный перевод без необходимости переключаться между вкладками или открывать главное окно.</p>
+        </div>
+    </div>
+</section>
+
 <script src="script.js"></script>
 <script src="main-window.js"></script>
 <script src="dictionaries-mockup.js"></script>
+<script src="mini-mockup.js"></script>
 </body>
 </html>
