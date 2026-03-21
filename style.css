@@ -155,15 +155,58 @@ a { text-decoration: none; }
     font-size: 15px;
 }
 
-.footer-links a {
-    color: #e5e7eb;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-size: 16px;
+/* Блок с соцсетями и почтой разработчика */
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.footer-links a:hover {
+.socials-title {
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.footer-email {
+    color: #9ca3af;
+    font-size: 15px;
+    margin-bottom: 16px;
+    transition: color 0.3s;
+}
+
+.footer-email:hover {
     color: #4a90e2;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #4a90e2;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 .footer-bottom {
@@ -177,11 +220,11 @@ a { text-decoration: none; }
    ============================================ */
 ::-webkit-scrollbar {
     width: 12px;
-    background-color: #f8fafc; /* Цвет под фон сайта */
+    background-color: #f8fafc;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #f8fafc; /* Цвет под фон сайта */
+    background-color: #f8fafc;
     border: none;
     box-shadow: none;
 }
@@ -189,10 +232,97 @@ a { text-decoration: none; }
 ::-webkit-scrollbar-thumb {
     background-color: rgba(100, 100, 100, 0.35);
     border-radius: 10px;
-    border: 3px solid #f8fafc; /* Делаем рамку цвета фона, чтобы ползунок казался тоньше и аккуратнее */
+    border: 3px solid #f8fafc;
     background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(80, 80, 80, 0.6);
+}
+
+/* ============================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ (МЕНЬШЕ 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Скрываем навигацию в шапке, оставляем лого и кнопку */
+    .main-nav {
+        display: none;
+    }
+
+    .header-container {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .btn-outline {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+
+    /* Упрощаем показ контента: скрываем анимации 3D, выравниваем текст по центру */
+    .showcase-container,
+    .showcase-container.reverse-layout {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Полностью прячем все мокапы расширения на телефонах */
+    .showcase-visual {
+        display: none;
+    }
+
+    .showcase-section {
+        padding: 60px 0;
+    }
+
+    .showcase-content {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Сетка преимуществ в один столбец */
+    .why-section {
+        padding: 80px 0 100px 0;
+    }
+
+    .why-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    /* Выравниваем футер по центру */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-socials {
+        align-items: center;
+    }
 }

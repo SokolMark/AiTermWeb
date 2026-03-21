@@ -37,3 +37,25 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
 }
+
+/* Мобильная адаптация главного экрана */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 15px 60px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        font-size: 16px;
+        padding: 14px 28px;
+    }
+}
