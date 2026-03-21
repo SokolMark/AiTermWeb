@@ -82,7 +82,7 @@ async function runExactMockupAnimation() {
 
         outputText.value = 'Vibra';
 
-        const levels = ['A1', 'A2', 'B1', 'B2'];
+        const levels = ['A1', 'A2', 'B1'];
         for (let i = 0; i < levels.length; i++) {
             levelInd.innerHTML = `<span class="level-text-anim">${levels[i]}</span>`;
             await delay(300);
