@@ -1,10 +1,17 @@
 /* style.css */
+html {
+    /* Задаем цвета для Firefox: ползунок и цвет дорожки под фон сайта */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.35) #f8fafc;
+}
+
 body {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Inter', system-ui, sans-serif;
     background-color: #f8fafc;
     color: #1a1d27;
 }
+
 a { text-decoration: none; }
 .container { max-width: 1250px; margin: 0 auto; padding: 0 40px; }
 
@@ -169,19 +176,23 @@ a { text-decoration: none; }
    Кастомный скроллбар (Custom Scrollbar)
    ============================================ */
 ::-webkit-scrollbar {
-    width: 8px;
-    background-color: transparent;
+    width: 12px;
+    background-color: #f8fafc; /* Цвет под фон сайта */
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: #f8fafc; /* Цвет под фон сайта */
+    border: none;
+    box-shadow: none;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(100, 100, 100, 0.7);
+    background-color: rgba(100, 100, 100, 0.35);
     border-radius: 10px;
+    border: 3px solid #f8fafc; /* Делаем рамку цвета фона, чтобы ползунок казался тоньше и аккуратнее */
+    background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(80, 80, 80, 0.9);
+    background-color: rgba(80, 80, 80, 0.6);
 }
