@@ -59,3 +59,61 @@
         padding: 14px 28px;
     }
 }
+
+/* Стили для наклейки Coming Soon */
+.coming-soon-sticker {
+    position: absolute;
+    top: -10px;
+    right: -70px;
+    background-color: #ff4757;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(15deg); /* Тот самый наклон */
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+    border: 2px solid #ffffff; /* Белая окантовка для эффекта стикера */
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Мобильная адаптация для наклейки, чтобы не уезжала за экран */
+@media (max-width: 768px) {
+    .coming-soon-sticker {
+        font-size: 11px;
+        padding: 3px 8px;
+        right: -45px;
+        top: -12px;
+    }
+}
+
+/* ============================================
+   Магнитная кнопка "Add to Chrome"
+   ============================================ */
+#magnetic-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* Плавный возврат на место */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+#magnetic-btn:hover {
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.4);
+    /* Во время движения за курсором анимация должна быть быстрее, чтобы не было "желе" */
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+}
+
+#magnetic-btn .btn-text {
+    display: inline-block;
+    pointer-events: none; /* Чтобы текст не перебивал события мыши */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#magnetic-btn:hover .btn-text {
+    transition: transform 0.1s ease-out;
+}
