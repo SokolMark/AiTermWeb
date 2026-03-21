@@ -170,14 +170,15 @@ a { text-decoration: none; }
 }
 
 .footer-email {
-    color: #9ca3af;
+    color: #9ca3af !important;
     font-size: 15px;
     margin-bottom: 16px;
     transition: color 0.3s;
+    text-decoration: none !important;
 }
 
 .footer-email:hover {
-    color: #4a90e2;
+    color: #4a90e2 !important;
 }
 
 .social-icons {
@@ -192,21 +193,25 @@ a { text-decoration: none; }
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: #9ca3af;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #9ca3af !important;
     transition: all 0.3s ease;
+    text-decoration: none !important;
+    border: none !important;
 }
 
 .social-icon:hover {
-    background: #4a90e2;
-    color: #ffffff;
+    background: #4a90e2 !important;
+    color: #ffffff !important;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3) !important;
 }
 
 .social-icon svg {
     width: 20px;
     height: 20px;
+    stroke: currentColor !important;
+    fill: none !important;
 }
 
 .footer-bottom {
