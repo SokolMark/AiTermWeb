@@ -1,6 +1,5 @@
-/* ============================================
-   AiTerm — Mini Window Showcase Styles
-   ============================================ */
+
+/*AiTerm — Mini Window Showcase Styles*/
 
 .mini-mockup-scene {
     position: relative;
@@ -15,14 +14,13 @@
     transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
 }
 
-/* Стили обычного текста на веб-странице (без карточки) */
 .browser-text-container {
     position: absolute;
     top: 20px;
     left: 20px;
     width: 460px;
     padding: 20px;
-    border: 1px dashed rgba(0,0,0,0.15); /* Минимальная обводка для вида рабочей области */
+    border: 1px dashed rgba(0,0,0,0.15);
     border-radius: 8px;
     transform: translateZ(0);
     background: transparent;
@@ -44,14 +42,12 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Дизайн реального системного выделения текста */
 #mini-highlight {
     transition: background-color 0.15s ease, color 0.15s ease;
     cursor: text;
 }
 
-/* Увеличенное окно перевода */
-.aiterm-floating-window {
+#mini-popup.aiterm-floating-window {
     position: absolute;
     top: 150px;
     left: 30px;
@@ -69,7 +65,7 @@
     pointer-events: none;
 }
 
-.aiterm-header {
+#mini-popup .aiterm-header {
     text-align: center;
     font-weight: 800;
     font-size: 18px;
@@ -77,18 +73,18 @@
     letter-spacing: 1.5px;
 }
 
-.aiterm-title-ai {
+#mini-popup .aiterm-title-ai {
     background: linear-gradient(135deg, #4a90e2, #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.aiterm-title-term {
+#mini-popup .aiterm-title-term {
     color: #8b90a0;
 }
 
-.aiterm-texts-row {
+#mini-popup .aiterm-texts-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -96,7 +92,7 @@
     margin-bottom: 18px;
 }
 
-.aiterm-text-box {
+#mini-popup .aiterm-text-box {
     background: #f0f2f7;
     border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: 16px;
@@ -115,7 +111,7 @@
     color: #3d4260;
 }
 
-.aiterm-middle-col {
+#mini-popup .aiterm-middle-col {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,7 +120,7 @@
     flex-shrink: 0;
 }
 
-.aiterm-arrow {
+#mini-popup .aiterm-arrow {
     background: linear-gradient(135deg, #4a90e2, #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -134,14 +130,14 @@
     line-height: 1;
 }
 
-.aiterm-controls-row {
+#mini-popup .aiterm-controls-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
 }
 
-.aiterm-lang-tag {
+#mini-popup .aiterm-lang-tag {
     background: #f0f2f7;
     border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: 20px;
@@ -154,7 +150,7 @@
     text-transform: uppercase;
 }
 
-.aiterm-translate-btn {
+#mini-popup .aiterm-translate-btn {
     background: #f0f2f7;
     border: 1.5px solid transparent;
     border-radius: 24px;
@@ -169,24 +165,23 @@
     justify-content: center;
 }
 
-/* Стили для подсказок внизу мини-окна */
-.aiterm-save-hint,
-.aiterm-disable-hint {
-    font-size: 13px; /* Единый размер для обеих строк */
+#mini-popup .aiterm-save-hint,
+#mini-popup .aiterm-disable-hint {
+    font-size: 13px;
     color: #8b90a0;
     text-align: center;
     line-height: 1.4;
     font-style: normal;
 }
 
-.aiterm-save-hint {
+#mini-popup .aiterm-save-hint {
     margin-top: 18px;
     padding-top: 14px;
     border-top: 1px dashed rgba(0, 0, 0, 0.08);
     margin-bottom: 6px;
 }
 
-.aiterm-disable-hint {
+#mini-popup .aiterm-disable-hint {
     margin-top: 0;
 }
 
@@ -201,7 +196,6 @@
     pointer-events: none;
 }
 
-/* Тремор-анимация стрелки */
 @keyframes aitermTremble {
     0% { transform: translate(0, 0); }
     20% { transform: translate(-1.5px, 0.5px); }
@@ -211,7 +205,7 @@
     100% { transform: translate(0, 0); }
 }
 
-.aiterm-tremble {
+#mini-popup .aiterm-tremble {
     animation: aitermTremble 0.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     display: inline-block;
 }
