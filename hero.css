@@ -86,7 +86,6 @@
     transition: transform 0.1s ease-out;
 }
 
-/* Мобильная адаптация главного экрана */
 @media (max-width: 768px) {
     .hero-section {
         padding: 120px 15px 60px;
@@ -105,6 +104,8 @@
     .hero-btn {
         font-size: 16px;
         padding: 14px 28px;
+        /* Убираем все базовые анимации на мобильных */
+        transition: none !important;
     }
 
     /* Подняли стикер выше и немного сдвинули, чтобы не перекрывал текст */
@@ -115,13 +116,19 @@
         top: -30px;
     }
 
-    /* Отключаем hover-эффекты для магнитной кнопки на мобильных устройствах */
-    #magnetic-btn:hover {
-        transform: translateY(-2px) !important; /* Оставляем только базовый подъем, как у обычной кнопки */
-        box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4) !important;
+    /* Полностью отключаем эффекты для магнитной кнопки на мобильных устройствах */
+    #magnetic-btn {
+        transition: none !important;
+        transform: none !important;
     }
 
-    #magnetic-btn:hover .btn-text {
+    #magnetic-btn:hover, #magnetic-btn:active {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    #magnetic-btn .btn-text {
+        transition: none !important;
         transform: none !important;
     }
 }
