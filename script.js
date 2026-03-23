@@ -40,6 +40,13 @@ if (magneticBtn) {
     const btnText = magneticBtn.querySelector('.btn-text');
 
     magneticBtn.addEventListener('mousemove', (e) => {
+        // Отключаем магнитный эффект для мобильных устройств
+        if (window.innerWidth <= 768) {
+            magneticBtn.style.transform = '';
+            if (btnText) btnText.style.transform = '';
+            return;
+        }
+
         // Получаем координаты и размеры кнопки
         const rect = magneticBtn.getBoundingClientRect();
 
@@ -57,10 +64,25 @@ if (magneticBtn) {
     });
 
     magneticBtn.addEventListener('mouseleave', () => {
+        // Отключаем сброс позиций через JS, если это мобилка (чтобы не перебить hover в CSS)
+        if (window.innerWidth <= 768) {
+            magneticBtn.style.transform = '';
+            if (btnText) btnText.style.transform = '';
+            return;
+        }
+
         // Когда курсор уходит, возвращаем все точно в центр
         magneticBtn.style.transform = `translate(0px, 0px)`;
         if (btnText) {
             btnText.style.transform = `translate(0px, 0px)`;
+        }
+    });
+
+    // Дополнительный сброс стилей при изменении размера окна
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            magneticBtn.style.transform = '';
+            if (btnText) btnText.style.transform = '';
         }
     });
 }

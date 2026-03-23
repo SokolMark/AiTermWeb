@@ -38,28 +38,6 @@
     box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
 }
 
-/* Мобильная адаптация главного экрана */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 120px 15px 60px;
-    }
-
-    .hero-title {
-        font-size: 38px;
-        margin-bottom: 16px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-
-    .hero-btn {
-        font-size: 16px;
-        padding: 14px 28px;
-    }
-}
-
 /* Стили для наклейки Coming Soon */
 .coming-soon-sticker {
     position: absolute;
@@ -78,16 +56,6 @@
     border: 2px solid #ffffff; /* Белая окантовка для эффекта стикера */
     pointer-events: none;
     z-index: 10;
-}
-
-/* Мобильная адаптация для наклейки, чтобы не уезжала за экран */
-@media (max-width: 768px) {
-    .coming-soon-sticker {
-        font-size: 11px;
-        padding: 3px 8px;
-        right: -45px;
-        top: -12px;
-    }
 }
 
 /* ============================================
@@ -116,4 +84,44 @@
 
 #magnetic-btn:hover .btn-text {
     transition: transform 0.1s ease-out;
+}
+
+/* Мобильная адаптация главного экрана */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 15px 60px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        font-size: 16px;
+        padding: 14px 28px;
+    }
+
+    /* Подняли стикер выше и немного сдвинули, чтобы не перекрывал текст */
+    .coming-soon-sticker {
+        font-size: 11px;
+        padding: 3px 8px;
+        right: -30px;
+        top: -30px;
+    }
+
+    /* Отключаем hover-эффекты для магнитной кнопки на мобильных устройствах */
+    #magnetic-btn:hover {
+        transform: translateY(-2px) !important; /* Оставляем только базовый подъем, как у обычной кнопки */
+        box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4) !important;
+    }
+
+    #magnetic-btn:hover .btn-text {
+        transform: none !important;
+    }
 }
