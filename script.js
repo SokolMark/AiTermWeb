@@ -1,4 +1,3 @@
-// Плавная прокрутка для якорных ссылок на сайте-визитке
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -15,7 +14,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Логика появления верхней панели при прокрутке вниз
 const header = document.getElementById('main-header');
 const heroSection = document.querySelector('.hero-section');
 
@@ -23,7 +21,6 @@ window.addEventListener('scroll', () => {
     // Получаем высоту первого экрана (Hero)
     const heroHeight = heroSection.offsetHeight;
 
-    // Если пользователь проскроллил почти весь первый экран (оставили запас 100px)
     if (window.scrollY > heroHeight - 100) {
         header.classList.add('header-visible');
     } else {
@@ -31,9 +28,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ============================================
-// Эффект "Магнитного притяжения" для главной кнопки
-// ============================================
 const magneticBtn = document.getElementById('magnetic-btn');
 
 if (magneticBtn) {
@@ -47,24 +41,20 @@ if (magneticBtn) {
             return;
         }
 
-        // Получаем координаты и размеры кнопки
         const rect = magneticBtn.getBoundingClientRect();
 
         // Вычисляем, насколько далеко курсор от центра кнопки
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // Сдвигаем кнопку (умножаем на 0.3, чтобы она не улетала слишком далеко)
         magneticBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
 
-        // Сдвигаем текст с другим коэффициентом (0.15) для эффекта 3D-параллакса
         if (btnText) {
             btnText.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
         }
     });
 
     magneticBtn.addEventListener('mouseleave', () => {
-        // Отключаем сброс позиций через JS, если это мобилка (чтобы не перебить hover в CSS)
         if (window.innerWidth <= 768) {
             magneticBtn.style.transform = '';
             if (btnText) btnText.style.transform = '';
@@ -78,7 +68,6 @@ if (magneticBtn) {
         }
     });
 
-    // Дополнительный сброс стилей при изменении размера окна
     window.addEventListener('resize', () => {
         if (window.innerWidth <= 768) {
             magneticBtn.style.transform = '';

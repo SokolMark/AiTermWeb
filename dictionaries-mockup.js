@@ -79,7 +79,6 @@ async function runDictsMockupAnimation() {
             await wait(3100);
         }
 
-        // ОБНОВЛЕНО: Координаты крестика (чуть выше и правее, чтобы попасть идеально)
         cursor.style.top = '70px';
         cursor.style.left = '375px';
 

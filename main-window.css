@@ -113,7 +113,6 @@
 .popup-container .examples-title.active { opacity: 1; visibility: visible; }
 .popup-container .examples-arrows-container { display: flex !important; align-items: center !important; gap: 15px !important; margin: 0 auto !important; position: absolute !important; left: 0 !important; right: 0 !important; width: max-content !important; z-index: 5; }
 
-/* ИЗМЕНЕНИЯ ЗДЕСЬ ДЛЯ ЗАЛИВКИ СТРЕЛКИ ФИРМЕННЫМ ЦВЕТОМ */
 .popup-container .examples-arrow-button { color: var(--header-bg); display: flex; align-items: center; justify-content: center; transition: color 0.2s ease, transform 0.15s ease; cursor: pointer; }
 .popup-container .examples-arrow-button svg { transition: fill 0.2s ease, stroke 0.2s ease; }
 .popup-container .examples-arrow-button.mockup-hover-arrow { color: var(--header-bg); }

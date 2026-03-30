@@ -1,6 +1,5 @@
 /* style.css */
 html {
-    /* Задаем цвета для Firefox: ползунок и цвет дорожки под фон сайта */
     scrollbar-width: thin;
     scrollbar-color: rgba(100, 100, 100, 0.35) #f8fafc;
 }
@@ -15,7 +14,6 @@ body {
 a { text-decoration: none; }
 .container { max-width: 1250px; margin: 0 auto; padding: 0 40px; }
 
-/* Header - скрыт по умолчанию и фиксируется сверху */
 .site-header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -38,7 +36,6 @@ a { text-decoration: none; }
 .header-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
 .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
 
-/* Навигационное меню */
 .main-nav { display: flex; gap: 30px; }
 .main-nav a { color: #1a1d27; font-weight: 600; font-size: 15px; transition: color 0.3s; }
 .main-nav a:hover { color: #4a90e2; }
@@ -77,9 +74,6 @@ a { text-decoration: none; }
 
 .mockup-cursor { position: absolute; width: 28px; height: 28px; z-index: 1000; top: 120px; left: 180px; transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
 
-/* ============================================
-   Стили блока "Why AiTerm"
-   ============================================ */
 .why-section {
     padding: 150px 0 180px 0;
     background-color: #ffffff;
@@ -131,9 +125,6 @@ a { text-decoration: none; }
     margin: 0;
 }
 
-/* ============================================
-   Футер (Footer) с контактами
-   ============================================ */
 .site-footer {
     background-color: #111827;
     color: #ffffff;
@@ -155,7 +146,6 @@ a { text-decoration: none; }
     font-size: 15px;
 }
 
-/* Блок с соцсетями и почтой разработчика */
 .footer-socials {
     display: flex;
     flex-direction: column;
@@ -220,9 +210,6 @@ a { text-decoration: none; }
     font-size: 14px;
 }
 
-/* ============================================
-   Кастомный скроллбар (Custom Scrollbar)
-   ============================================ */
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #f8fafc;
@@ -245,15 +232,11 @@ a { text-decoration: none; }
     background-color: rgba(80, 80, 80, 0.6);
 }
 
-/* ============================================
-   МОБИЛЬНАЯ АДАПТАЦИЯ (МЕНЬШЕ 768px)
-   ============================================ */
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
     }
 
-    /* Скрываем навигацию в шапке, оставляем лого и кнопку */
     .main-nav {
         display: none;
     }
@@ -271,15 +254,12 @@ a { text-decoration: none; }
         font-size: 13px;
     }
 
-    /* Упрощаем показ контента: скрываем анимации 3D, выравниваем текст по центру */
     .showcase-container,
     .showcase-container.reverse-layout {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
-
-    /* Полностью прячем все мокапы расширения на телефонах */
     .showcase-visual {
         display: none;
     }
@@ -301,7 +281,6 @@ a { text-decoration: none; }
         margin-bottom: 20px;
     }
 
-    /* Сетка преимуществ в один столбец */
     .why-section {
         padding: 80px 0 100px 0;
     }
@@ -320,7 +299,6 @@ a { text-decoration: none; }
         padding: 30px 20px;
     }
 
-    /* Выравниваем футер по центру */
     .footer-container {
         flex-direction: column;
         text-align: center;

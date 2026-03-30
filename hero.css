@@ -1,7 +1,3 @@
-/* ============================================
-   AiTerm — Hero Section Styles
-   ============================================ */
-
 .hero-section {
     padding: 100px 20px 80px;
     text-align: center;
@@ -38,29 +34,6 @@
     box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
 }
 
-/* Стили для наклейки Coming Soon */
-.coming-soon-sticker {
-    position: absolute;
-    top: -10px;
-    right: -70px;
-    background-color: #ff4757;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transform: rotate(15deg); /* Тот самый наклон */
-    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
-    border: 2px solid #ffffff; /* Белая окантовка для эффекта стикера */
-    pointer-events: none;
-    z-index: 10;
-}
-
-/* ============================================
-   Магнитная кнопка "Add to Chrome"
-   ============================================ */
 #magnetic-btn {
     display: inline-flex;
     justify-content: center;
@@ -72,13 +45,12 @@
 
 #magnetic-btn:hover {
     box-shadow: 0 15px 30px rgba(74, 144, 226, 0.4);
-    /* Во время движения за курсором анимация должна быть быстрее, чтобы не было "желе" */
     transition: transform 0.1s ease-out, box-shadow 0.3s ease;
 }
 
 #magnetic-btn .btn-text {
     display: inline-block;
-    pointer-events: none; /* Чтобы текст не перебивал события мыши */
+    pointer-events: none;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -104,19 +76,10 @@
     .hero-btn {
         font-size: 16px;
         padding: 14px 28px;
-        /* Убираем все базовые анимации на мобильных */
+
         transition: none !important;
     }
 
-    /* Подняли стикер выше и немного сдвинули, чтобы не перекрывал текст */
-    .coming-soon-sticker {
-        font-size: 11px;
-        padding: 3px 8px;
-        right: -30px;
-        top: -30px;
-    }
-
-    /* Полностью отключаем эффекты для магнитной кнопки на мобильных устройствах */
     #magnetic-btn {
         transition: none !important;
         transform: none !important;
